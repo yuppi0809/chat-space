@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-#DB設計
+##DB設計
 ## usersテーブル
 
 |Column|Type|Options|
@@ -34,24 +34,28 @@ Things you may want to cover:
 
 ### Association
 - has_many :messages
+- has many :members
+- has many :groups, through: :members
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Associationss
 - has_many :messages
+- has many :members
+- has many :users, through: :members
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|none|
-|image|string|none|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|body|text|
+|image|string|
+|group_id|references :group|null: false, foreign_key: true|
+|user_id|references :user|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -61,8 +65,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group_id|references :group|null: false, foreign_key: true|
+|user_id|references :user|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
