@@ -54,8 +54,13 @@ Things you may want to cover:
 |------|----|-------|
 |body|text|
 |image|string|
+<<<<<<< HEAD
 |group_id|references :group|null: false, foreign_key: true|
 |user_id|references :user|null: false, foreign_key: true|
+=======
+|group_id|integer|null: false, references :group, foreign_key: true|
+|user_id|integer|null: false, references :user, foreign_key: true|
+>>>>>>> origin/edit-read-me
 
 ### Association
 - belongs_to :group
@@ -65,8 +70,13 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
+<<<<<<< HEAD
 |group_id|references :group|null: false, foreign_key: true|
 |user_id|references :user|null: false, foreign_key: true|
+=======
+|group_id|integer|null: false, references :group, foreign_key: true|
+|user_id|integer|null: false, references :user, foreign_key: true|
+>>>>>>> origin/edit-read-me
 
 ### Association
 - belongs_to :group
