@@ -22,3 +22,62 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+##DB設計
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+
+### Association
+- has_many :messages
+- has many :members
+- has many :groups, through: :members
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+
+### Associationss
+- has_many :messages
+- has many :members
+- has many :users, through: :members
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|body|text|
+|image|string|
+<<<<<<< HEAD
+|group_id|references :group|null: false, foreign_key: true|
+|user_id|references :user|null: false, foreign_key: true|
+=======
+|group_id|integer|null: false, references :group, foreign_key: true|
+|user_id|integer|null: false, references :user, foreign_key: true|
+>>>>>>> origin/edit-read-me
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+## membersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+<<<<<<< HEAD
+|group_id|references :group|null: false, foreign_key: true|
+|user_id|references :user|null: false, foreign_key: true|
+=======
+|group_id|integer|null: false, references :group, foreign_key: true|
+|user_id|integer|null: false, references :user, foreign_key: true|
+>>>>>>> origin/edit-read-me
+
+### Association
+- belongs_to :group
+- belongs_to :user
