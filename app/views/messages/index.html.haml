@@ -1,8 +1,9 @@
 .left-content
   .left-content__menu-bar
-    笠原優子
+    = current_user.name
     %i.fa.fa-cog
-    %i.fa.fa-edit
+    = link_to edit_user_path(current_user) do
+      %i.fa.fa-edit
   .left-content__group-display
     %p.group-name グループ名
     %p.message まだメッセージはありません。
