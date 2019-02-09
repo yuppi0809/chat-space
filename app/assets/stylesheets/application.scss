@@ -1,0 +1,129 @@
+@import "./reset";
+@import "config/variables";
+@import "mixin/mixin";
+@import "font-awesome";
+
+html{
+  height:100%;
+}
+
+body{
+  height:100%;
+  @include clearfix;
+}
+
+.left-content{
+  height:100%;
+  width:300px;
+  background-color:#2f3e51;
+  color:#FFF;
+  box-sizing: border-box;
+  float:left;
+
+  &__menu-bar{
+    background-color: #253141;
+    font-weight:bold;
+    font-size:16px;
+    padding:0 20px;
+    height:92px;
+    line-height:92px;
+
+      .fa{
+        float:right;
+        margin-left:10px;
+        line-height:92px;
+
+      }
+  }
+
+  &__group-display{
+    padding:0 20px 40px;
+    margin-bottom:5px;
+
+      p.group-name{
+        font-size:15px;
+      }
+
+      p.group-name:first-child{
+        padding-top:20px;
+      }
+
+      p.message{
+        font-size:11px;
+      }
+    }
+}
+
+.right-content{
+  float:left;
+  width:calc(100% - 300px);
+  box-sizing: border-box;
+
+    &__chat-banner{
+      padding: 0 40px;
+      border-bottom: 1px solid #eeeeee;
+      @include clearfix;
+
+        .left{
+          float:left;
+        }
+        .group-name{
+          font-size:20px;
+          color:#333333;
+          padding-top:35px;
+        }
+
+        .members{
+          font-size:12px;
+          color:#999999;
+          padding-top:15px;
+        }
+      }
+
+    &__message-body{
+      padding: 0 40px;
+
+
+        .message{
+          padding-top:46px;
+
+            .username{
+              font-size:16px;
+              font-weight: bold;
+              color:$darkishGrey;
+
+              span{
+                font-size:12px;
+                color:#999999;
+                margin-left:10px;
+              }
+            }
+
+            .text{
+              font-size:14px;
+              color:$darkishGrey;
+            }
+        }
+    }
+}
+
+.right-content__chat-banner{
+  .button{
+    display:inline-block;
+    border:none;
+    background-color:none;
+    padding:0 20px;
+    border: 2px solid $skyBlue;
+    text-decoration:none;
+    cursor:pointer;
+    color:$skyBlue;
+    height:40px;
+    line-height:40px;
+    float:right;
+    margin-top:28px;
+  }
+}
+
+@import "message-form";
+
+

@@ -1,0 +1,43 @@
+.left-content
+  .left-content__menu-bar
+    笠原優子
+    %i.fa.fa-cog
+    %i.fa.fa-edit
+  .left-content__group-display
+    %p.group-name グループ名
+    %p.message まだメッセージはありません。
+  .left-content__group-display
+    %p.group-name グループ名
+    %p.message まだメッセージはありません。
+
+.right-content
+  .right-content__chat-banner
+    .left
+      %p.group-name sample
+      %p.members Members: 笠原優子
+    %a.button{:href => "#"} Edit
+  .right-content__message-body
+    .message
+      %p.username
+        笠原優子
+        %span 2018/09/02
+      %p.text まだメッセージはありません。
+    .message
+      %p.username
+        笠原優子
+        %span 2018/09/02
+      %p.text まだメッセージはありません。
+  .form-wrapper
+    = form_tag("/tweets") do
+      = text_field_tag :title, "", placeholder: "Type a message"
+      %label.upload-label{for: "upload-icon"}
+        %i.fa.fa-picture-o
+        = file_field_tag :image, id: "upload-icon", class: "hidden"
+      = submit_tag("Send", id: "submit-btn")
+
+
+
+
+
+
+
