@@ -2,6 +2,7 @@
 @import "config/variables";
 @import "mixin/mixin";
 @import "font-awesome";
+@import "user";
 
 html{
   height:100%;
@@ -28,11 +29,11 @@ body{
     height:92px;
     line-height:92px;
 
-      .fa{
-        float:right;
-        margin-left:10px;
-        line-height:92px;
-
+    .fa{
+      float:right;
+      margin-left:10px;
+      line-height:92px;
+      color:#FFF;
       }
   }
 
