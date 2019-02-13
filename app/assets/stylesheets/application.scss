@@ -72,6 +72,10 @@ body{
       padding: 0 40px;
       border-bottom: 1px solid #eeeeee;
       @include clearfix;
+      overflow: auto;
+      height:92px;
+      box-sizing:border-box;
+
 
         .left{
           float:left;
@@ -90,23 +94,27 @@ body{
       }
 
     &__message-body{
-      padding: 0 40px;
-
+      padding: 40px 40px 0;
+      overflow: auto;
+      height: calc(100vh - 182px);
+      box-sizing: border-box;
 
         .message{
-          padding-top:46px;
+          padding-bottom:46px;
 
             .username{
               font-size:16px;
               font-weight: bold;
               color:$darkishGrey;
+              display:inline-block;
+            }
 
-              span{
+              .date-and-time{
                 font-size:12px;
                 color:#999999;
-                margin-left:10px;
+                margin-left:5px;
+                display:inline-block;
               }
-            }
 
             .text{
               font-size:14px;
