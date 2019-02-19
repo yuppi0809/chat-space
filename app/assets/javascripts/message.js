@@ -38,6 +38,11 @@ $(function(){
     dataType: 'json',
     processData: false,
     contentType: false
-  })
-  })
+  }).done(function(message){
+    buildHTML(message);
+    scrollToBottom();
+    }).fail(function(){
+      alert("エラーが発生しました")
+    });
+  });
 });
