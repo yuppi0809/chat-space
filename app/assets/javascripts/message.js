@@ -19,6 +19,12 @@ $(function(){
     messageBody.append(html);
   }
 
+  function scrollToBottom(){
+    messageBody.animate({
+      scrollTop: messageBody[0].scrollHeight
+    },500)
+  }
+
   $("#new_message").on("submit", function(e){
   e.preventDefault();
   var url = $("#new_message").attr("action");
