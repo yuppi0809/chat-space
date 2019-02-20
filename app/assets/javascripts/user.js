@@ -58,3 +58,4 @@ $(function(){
 
   listDisplay.on("click", ".chat-group-user__btn--add", function(e){
     e.preventDefault();
+    $(this).parent().remove();
