@@ -13,6 +13,14 @@ $(function(){
     listDisplay.append(html);
     }
 
+  function appendNoUser(message){
+    var html =
+         `<div class="chat-group-user clearfix">
+           <p>${message}</p>
+        </div>`
+    listDisplay.append(html);
+  }
+
   $("#user-search-field").on("keyup", function(){
     var input = $(this).val();
       $.ajax({
