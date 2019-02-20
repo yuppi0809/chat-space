@@ -59,3 +59,7 @@ $(function(){
   listDisplay.on("click", ".chat-group-user__btn--add", function(e){
     e.preventDefault();
     $(this).parent().remove();
+    var user_id = $(this).attr("data-user-id");
+    var user_name = $(this).attr("data-user-name");
+    appendSelectedUser(user_id, user_name)
+  });
