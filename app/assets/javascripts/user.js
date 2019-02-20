@@ -39,3 +39,8 @@ $(function(){
         else{
           appendNoUser("一致するユーザーはいません");
         }
+      }).fail(function(){
+        alert("ユーザー検索に失敗しました");
+      })
+    }
+  });
