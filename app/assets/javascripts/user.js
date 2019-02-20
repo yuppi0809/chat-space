@@ -30,3 +30,12 @@ $(function(){
           search: input
         },
         dataType: 'json'
+      }).done(function(users){
+        if (users.length !== 0){
+          users.forEach(function(user){
+          appendUser(user);
+          })
+        }
+        else{
+          appendNoUser("一致するユーザーはいません");
+        }
