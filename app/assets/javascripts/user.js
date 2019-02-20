@@ -63,3 +63,8 @@ $(function(){
     var user_name = $(this).attr("data-user-name");
     appendSelectedUser(user_id, user_name)
   });
+
+  selectedUsersDisplay.on("click", ".chat-group-user__btn--remove", function(){
+    $(this).parent().remove();
+  })
+});
