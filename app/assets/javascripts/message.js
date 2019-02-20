@@ -29,7 +29,7 @@ $(function(){
   e.preventDefault();
   var url = $("#new_message").attr("action");
   var formData = new FormData(this);
-  $("#message_content").val("");
+  $(this)[0].reset();
 
   $.ajax({
     type: 'POST',
