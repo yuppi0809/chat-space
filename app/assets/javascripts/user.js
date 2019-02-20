@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
 
   var listDisplay = $("#user-search-result");
   var selectedUsersDisplay = $(".chat-group-form__field:nth-child(5)").find(".chat-group-form__field--right");
@@ -31,6 +31,7 @@ $(function(){
 
     selectedUsersDisplay.append(html);
   }
+
 
   $("#user-search-field").on("keyup", function(){
     var input = $(this).val();
