@@ -51,6 +51,7 @@ $(function(){
     });
   };
 
+  if (window.location.href.match(/\/groups\/\d+\/messages/)){
     setInterval(function(){
       callAjax();
     }, 5000)
