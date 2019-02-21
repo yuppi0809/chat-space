@@ -1,13 +1,15 @@
 $(function(){
   var messageBody = $(".right-content__message-body")
+
   function buildHTML(message){
-    var modifiedTime = message.time.slice(0, 10) + " " + message.time.slice(11, 16);
-    var html = "<div class=\"message\">"
+    var html = "<div class=\"message\" data-id=\""
+    + message.id
+    + "\">"
     + "<p class=\"username\">"
     + message.user_name
     + "</p>"
     + "<span class=\"date-and-time\">"
-    + modifiedTime
+    + message.time
     + "</span>"
     + "<p class=\"text\">"
     + (message.content ? message.content : "" )

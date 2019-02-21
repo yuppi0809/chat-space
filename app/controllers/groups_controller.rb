@@ -6,11 +6,11 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.users << current_user
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.new(group_params)
+
     if @group.save
     flash[:notice] = "グループを作成しました"
     redirect_to root_path
