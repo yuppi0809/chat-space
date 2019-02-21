@@ -39,3 +39,10 @@ $(function(){
       }
     },
     dataType: 'json'
+  }).done(function(messages){
+    if(messages){
+      messages.forEach(function(message){
+      buildHTML(message);
+      });
+      scrollToBottom();
+      }
