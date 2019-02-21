@@ -2,7 +2,9 @@ $(function(){
   var messageBody = $(".right-content__message-body")
 
   function buildHTML(message){
-    var html = "<div class=\"message\">"
+    var html = "<div class=\"message\" data-id=\""
+    + message.id
+    + "\">"
     + "<p class=\"username\">"
     + message.user_name
     + "</p>"
