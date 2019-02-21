@@ -25,6 +25,12 @@ $(function(){
     },500)
   }
 
+  function displayNewMessages(messages){
+    messages.forEach(function(message){
+    buildHTML(message);
+    });
+  };
+
   function callAjax(){
     var message_id = $('.message:last').data('id');
     var url = $(".form-wrapper .new_message").attr("action");
@@ -40,11 +46,9 @@ $(function(){
     dataType: 'json'
   }).done(function(messages){
     if(messages){
-      messages.forEach(function(message){
-      buildHTML(message);
-      });
+      displayNewMessages(messages)
       scrollToBottom();
-      }
+    }
   }).fail(function(){
     alert("エラーが発生しました");
     });
