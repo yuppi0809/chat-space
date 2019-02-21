@@ -20,6 +20,12 @@ $(function(){
     messageBody.append(html);
   }
 
+  function scrollToBottom(){
+    messageBody.animate({
+      scrollTop: messageBody[0].scrollHeight
+    },500)
+  }
+
   function callAjax(){
     var message_id = $('.message:last').data('id');
     var url = $(".form-wrapper .new_message").attr("action");
