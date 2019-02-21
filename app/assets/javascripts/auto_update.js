@@ -46,3 +46,8 @@ $(function(){
       });
       scrollToBottom();
       }
+  }).fail(function(){
+    alert("エラーが発生しました");
+    });
+  };
+
