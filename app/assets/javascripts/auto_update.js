@@ -51,3 +51,9 @@ $(function(){
     });
   };
 
+    setInterval(function(){
+      callAjax();
+    }, 5000)
+  }
+});
+
