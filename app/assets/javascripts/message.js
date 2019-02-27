@@ -32,6 +32,7 @@ $(document).on('turbolinks:load', function() {
   var url = $("#new_message").attr("action");
   var formData = new FormData(this);
   $(this)[0].reset();
+  $("#submit-btn").removeAttr("data-disable-with");
 
   $.ajax({
     type: 'POST',
