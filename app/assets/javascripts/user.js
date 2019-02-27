@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
 
   var listDisplay = $("#user-search-result");
-  var selectedUsersDisplay = $(".chat-group-form__field:nth-child(5)").find(".chat-group-form__field--right");
+  var selectedUsersDisplay = $(".chat-group-form__field--right.user-display");
 
   function appendUser(user){
     var html =
