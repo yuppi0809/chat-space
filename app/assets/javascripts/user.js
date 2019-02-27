@@ -67,7 +67,8 @@ $(document).on('turbolinks:load', function() {
     appendSelectedUser(user_id, user_name)
   });
 
-  selectedUsersDisplay.on("click", ".chat-group-user__btn--remove", function(){
+  selectedUsersDisplay.on("click", ".chat-group-user__btn--remove", function(e){
+    e.preventDefault();
     $(this).parent().remove();
   })
 });
