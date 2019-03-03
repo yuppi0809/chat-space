@@ -8,7 +8,9 @@
         Members:
         %span
           = @group.show_username
-    = link_to "Edit", edit_group_path(@group), class: "button", data: { turbolinks: false }
+    .right
+      = link_to "Edit", edit_group_path(@group), class: "button", data: { turbolinks: false }
+
   .right-content__message-body
     = render @group.messages
 

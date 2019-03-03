@@ -1,6 +1,8 @@
 $(document).on('turbolinks:load', function() {
   var messageBody = $(".right-content__message-body")
 
+  var message_id = $('.message:last').data('id');
+
   function buildHTML(message){
     var html = "<div class=\"message\" data-id=\""
     + message.id
@@ -26,7 +28,6 @@ $(document).on('turbolinks:load', function() {
       scrollTop: messageBody[0].scrollHeight
     },500)
   }
-
   function displayNewMessages(messages){
     messages.forEach(function(message){
     buildHTML(message);
@@ -34,7 +35,6 @@ $(document).on('turbolinks:load', function() {
   };
 
   function callAjax(){
-    var message_id = $('.message:last').data('id');
     var url = $(".form-wrapper .new_message").attr("action");
 
     $.ajax({
@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function() {
     });
   };
 
-  if (window.location.href.match(/\/groups\/\d+\/messages/)){
+  if (window.location.href.match(/\/groups\/\d+\/messages/) && message_id){
     setInterval(function(){
       callAjax();
     }, 5000)
