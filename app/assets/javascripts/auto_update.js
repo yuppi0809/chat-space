@@ -35,6 +35,7 @@ $(document).on('turbolinks:load', function() {
   };
 
   function callAjax(){
+    message_id = $('.message:last').data('id');
     var url = $(".form-wrapper .new_message").attr("action");
 
     $.ajax({
