@@ -14,8 +14,9 @@
 
   .form-wrapper
     = form_for [@group,@message] do |f|
-      = f.text_field :content, placeholder: 'Type a message'
-      = f.label :image, class: 'upload-label' do
-        = fa_icon 'picture-o'
-      = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', id: 'submit-btn'
+      .div
+        = f.text_field :content, placeholder: 'Type a message'
+        = f.label :image, class: 'upload-label' do
+          = fa_icon 'picture-o'
+        = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', id: 'submit-btn'

@@ -5,39 +5,49 @@
   width: 100%;
   box-sizing: border-box;
 
+
+.div{
+  height:50px;
+  position: relative;
+
+}
   #message_content{
-    height:50px;
-    width:calc(100% - 100px);
+    height:100%;
     box-sizing:border-box;
     color: #434A54;
     font-size:16px;
     padding-left:10px;
-    position: relative;
     float:left;
+    width: 77%;
+    margin-right:3%;
+
   }
 
   .upload-label{
-    .fa{
     position:absolute;
-    bottom: 45px;
-    transform:translateY(50%);
-    right: 160px;
+    top: 0;
+    transform:translateY(100%);
+    right: 28%;
     cursor:pointer;
-    }
 }
 
   #submit-btn{
-    display:inline-block;
+    float:left;
     border:none;
     background-color:$skyBlue;
     border: 2px solid $skyBlue;
     text-decoration:none;
     cursor:pointer;
     color:#FFF;
-    height:50px;
-    line-height:50px;
+    height:100%;
     padding:0 30px;
-    float:right;
+    box-sizing:border-box;
+    width:20%;
+
+    @media screen and (max-width:800px){
+       padding:0 10px;
+       font-size: 70%;
+    }
   }
 }
 

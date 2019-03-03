@@ -23,6 +23,12 @@ body{
   box-sizing: border-box;
   float:left;
   overflow:auto;
+    @media screen and(max-width:700px){
+      width:100%;
+      height:auto;
+      float:none;
+      overflow:inherit;
+    }
 
   &__menu-bar{
     background-color: #253141;
@@ -40,9 +46,27 @@ body{
       }
   }
 
+
+  .group-select{
+    display: none;
+    cursor:pointer;
+    @media screen and (max-width:700px){
+      display:block;
+      padding:20px;
+    }
+  }
+
   &__group-display{
     padding:0 20px 40px;
     text-decoration:none;
+    @media screen and (max-width:700px){
+      display:none;
+      padding:20px;
+
+      &:hover{
+        opacity:.8;
+      }
+    }
 
     .group-page{
       text-decoration:none;
@@ -62,12 +86,20 @@ body{
         font-size:11px;
       }
     }
-}
+  &__group-display:nth-child(1){
+    display:block;
+  }
+ }
 
 .right-content{
   float:left;
   width:calc(100% - 300px);
   box-sizing: border-box;
+
+    @media screen and (max-width:700px){
+      float:none;
+      width:100%;
+    }
 
     &__chat-banner{
       padding: 0 40px;
@@ -98,6 +130,10 @@ body{
       overflow: auto;
       height: calc(100vh - 182px);
       box-sizing: border-box;
+
+      @media screen and (max-width:700px){
+        height:auto;
+      }
 
         .message{
           padding-bottom:46px;
@@ -141,6 +177,13 @@ body{
   }
 }
 
+.show{
+  display:block;
+}
+
+.opacity{
+  opacity:.8;
+}
 @import "message-form";
 
 
