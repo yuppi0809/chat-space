@@ -48,7 +48,7 @@ $(document).on('turbolinks:load', function() {
     dataType: 'json'
   }).done(function(messages){
     if(messages){
-      displayNewMessages(messages)
+      displayNewMessages(messages);
       scrollToBottom();
     }
   }).fail(function(){
