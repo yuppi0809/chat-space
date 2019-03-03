@@ -1,15 +1,19 @@
 .left-content
-  .left-content__menu-bar
-    = current_user.name
-    = link_to edit_user_path(current_user), data: { turbolinks: false } do
-      %i.fa.fa-cog
-    =link_to new_group_path, data: { turbolinks: false } do
-      %i.fa.fa-edit
 
-  .group-select
-    =fa_icon("chevron-down", text:"グループを選択する", right:true)
-  - current_user.groups.each do |group|
-    .left-content__group-display
-      = link_to group_messages_path(group),class: "group-page" do
-        %p.group-name=group.name
-        %p.message=group.show_messages
+  .left-content__header
+    .left-content__menu-bar
+      = current_user.name
+      = link_to edit_user_path(current_user), data: { turbolinks: false } do
+        %i.fa.fa-cog
+      =link_to new_group_path, data: { turbolinks: false } do
+        %i.fa.fa-edit
+
+    .group-select
+      =fa_icon("chevron-down", text:"グループを選択する", right:true)
+
+  .left-content__groups-display
+    - current_user.groups.each do |group|
+      .left-content__group-display
+        = link_to group_messages_path(group),class: "group-page" do
+          %p.group-name=group.name
+          %p.message=group.show_messages

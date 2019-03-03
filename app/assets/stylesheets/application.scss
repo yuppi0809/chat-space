@@ -30,6 +30,13 @@ body{
       overflow:inherit;
     }
 
+  &__header{
+    @media screen and(max-width:700px){
+      position:fixed;
+      width:100%;
+    }
+  }
+
   &__menu-bar{
     background-color: #253141;
     font-weight:bold;
@@ -38,11 +45,21 @@ body{
     height:92px;
     line-height:92px;
 
+  @media screen and (max-width:700px){
+      font-size:17px;
+      height:70px;
+      line-height:70px;
+    }
+
     .fa{
       float:right;
       margin-left:10px;
       line-height:92px;
       color:#FFF;
+
+      @media screen and (max-width:700px){
+      line-height:70px;
+    }
       }
   }
 
@@ -52,7 +69,14 @@ body{
     cursor:pointer;
     @media screen and (max-width:700px){
       display:block;
-      padding:20px;
+      padding:20px 20px 20px 20px;
+      background-color: #2f3e51;
+    }
+  }
+
+&__groups-display{
+    @media screen and (max-width:700px){
+      display: none;
     }
   }
 
@@ -60,7 +84,6 @@ body{
     padding:0 20px 40px;
     text-decoration:none;
     @media screen and (max-width:700px){
-      display:none;
       padding:20px;
 
       &:hover{
@@ -86,10 +109,8 @@ body{
         font-size:11px;
       }
     }
-  &__group-display:nth-child(1){
-    display:block;
   }
- }
+
 
 .right-content{
   float:left;
@@ -102,26 +123,35 @@ body{
     }
 
     &__chat-banner{
-      padding: 0 40px;
+      padding: 25px 40px;
       border-bottom: 1px solid #eeeeee;
       @include clearfix;
-      overflow: auto;
       height:92px;
       box-sizing:border-box;
 
+      @media screen and (max-width:700px){
+      padding:20px;
+      overflow: inherit;
+      height:auto;
+    }
 
-        .left{
-          float:left;
+    .left{
+      float:left;
+
         }
         .group-name{
           font-size:20px;
           color:#333333;
-          padding-top:35px;
+           @media screen and (max-width:700px){
+            font-size:20px;
+;
+    }
         }
 
         .members{
           font-size:12px;
           color:#999999;
+          margin-top:5px;
         }
       }
 
@@ -133,10 +163,14 @@ body{
 
       @media screen and (max-width:700px){
         height:auto;
+        padding: 20px 20px 0 20px;
       }
 
         .message{
           padding-bottom:46px;
+            @media screen and (max-width:700px){
+        padding-bottom:20px;
+             }
 
             .username{
               font-size:16px;
@@ -160,23 +194,25 @@ body{
     }
 }
 
-.right-content__chat-banner{
-  .button{
-    display:inline-block;
-    border:none;
-    background-color:none;
-    padding:0 20px;
-    border: 2px solid $skyBlue;
-    text-decoration:none;
-    cursor:pointer;
-    color:$skyBlue;
-    height:40px;
-    line-height:40px;
-    float:right;
-    margin-top:28px;
+.right{
+vertical-align: center;
+
+  &-content__chat-banner{
+    .button{
+      display:block;
+      border:none;
+      background-color:none;
+      padding:0 20px;
+      border: 2px solid $skyBlue;
+      text-decoration:none;
+      cursor:pointer;
+      color:$skyBlue;
+      height:40px;
+      line-height:40px;
+      float:right;
+    }
   }
 }
-
 .show{
   display:block;
 }
@@ -184,6 +220,11 @@ body{
 .opacity{
   opacity:.8;
 }
+
+.padding-top-for-dropdown{
+  padding-top: 134px;
+}
+
 @import "message-form";
 
 
